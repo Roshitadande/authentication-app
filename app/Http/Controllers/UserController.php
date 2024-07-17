@@ -55,4 +55,14 @@ class UserController extends Controller
         $users=User::all();
         return view('dashboard.dashboard');
     }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
 }

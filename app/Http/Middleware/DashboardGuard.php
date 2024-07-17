@@ -17,7 +17,7 @@ class DashboardGuard
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->profile_update == 1){
+        if(auth()->check() && auth()->user()->profile_update == 1){
             return $next($request);
         }
         else{

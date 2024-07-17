@@ -25,7 +25,7 @@
                         <a class="dropdown-item" href="{{ route('profile') }}">
                             My Profile
                         </a>
-                        <a href="" class="dropdown-item" > 
+                        <a href="{{route('logout')}}" class="dropdown-item" > 
                             Logout
                         </a>
                     </div>

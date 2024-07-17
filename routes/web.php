@@ -39,10 +39,11 @@ Route::group(['middleware'=>'webgaurd'], function () {
 Route::get('/profile',[DashboardController::class,'editProfile'])->name('profile');
 Route::put('/profile/update/{id}', [DashboardController::class, 'updateProfile'])->name('profile.update');
 
-Route::middleware(['dashgaurd'])->group(function(){
+Route::group(['middleware'=>'dashgaurd'],function(){
     Route::get('/home',[DashboardController::class,'showHome'])->name('home');
     Route::get('/about',[DashboardController::class,'showAbout'])->name('about');
     Route::get('/contact',[DashboardController::class,'showContact'])->name('contact');
 });
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 

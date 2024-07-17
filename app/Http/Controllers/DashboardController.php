@@ -42,6 +42,6 @@ class DashboardController extends Controller
             'profile_update' => 1,
         ]);
 
-        return redirect()->route('dashboard');
+        return view('dashboard.dashboard');
     }
 }
